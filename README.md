@@ -5,7 +5,7 @@ ITDS420 Assessment: Implementation and analysis of a parallel Dijkstra's algorit
 
 ![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen) <!-- Placeholder: Replace with actual coverage badge -->
+![Coverage](https://img.shields.io/badge/coverage-59%-brightgreen) <!-- Placeholder: Replace with actual coverage badge -->
 [![Python CI](https://github.com/KaungSettLwin/itds420-dsa-assessment/actions/workflows/ci.yml/badge.svg)](https://github.com/KaungSettLwin/itds420-dsa-assessment/actions/workflows/ci.yml)
 
 ## Project Description
@@ -113,59 +113,5 @@ To generate real performance benchmarks and plots (as discussed in Section 5.2 o
 3.  **Analyze the output** and use a plotting library (e.g., `matplotlib`, `seaborn`) to create visual charts.
 4.  **Embed the generated plots** (e.g., `speedup_plot.png`, `time_vs_nodes.svg`) directly into your assessment document.
 
-## Continuous Integration (CI)
 
-A Continuous Integration (CI) workflow ensures that your code is automatically tested and validated every time changes are pushed to the repository. For this project, a simple GitHub Actions workflow can be set up.
-
-### CI Workflow (`.github/workflows/ci.yml`)
-
-Create a file named `ci.yml` inside the `.github/workflows/` directory in your repository:
-
-```yaml
-# .github/workflows/ci.yml
-name: Python CI
-
-on:
-  push:
-    branches:
-      - main
-      - develop
-  pull_request:
-    branches:
-      - main
-      - develop
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11"] # Test across multiple Python versions
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
-        cache: 'pip' # Cache pip dependencies for faster builds
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: Run tests with pytest and coverage
-      run: |
-        pytest --cov=your_module_name --cov-report=xml # Generate XML for coverage services
-        # For local HTML report, you would run: pytest --cov=your_module_name --cov-report=html
-      env:
-        PYTHONPATH: ${{ github.workspace }} # Add project root to PYTHONPATH for module imports
-
-    # Optional: Upload coverage report to Codecov/Coveralls
-    # - name: Upload coverage to Codecov
-    #   uses: codecov/codecov-action@v3
-    #   with:
-    #     token: ${{ secrets.CODECOV_TOKEN }} # Set this in GitHub Secrets
-    #     file: ./coverage.xml # Path to coverage XML report
 
