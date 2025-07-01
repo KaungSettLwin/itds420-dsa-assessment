@@ -6,7 +6,7 @@ ITDS420 Assessment: Implementation and analysis of a parallel Dijkstra's algorit
 ![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen) <!-- Placeholder: Replace with actual coverage badge -->
-![CI Workflow](https://github.com/KaungSettLwin/itds420-dsa-assessment/workflows/CI/badge.svg) <!-- Placeholder: Replace with actual CI badge URL -->
+[![Python CI](https://github.com/KaungSettLwin/itds420-dsa-assessment/actions/workflows/ci.yml/badge.svg)](https://github.com/KaungSettLwin/itds420-dsa-assessment/actions/workflows/ci.yml)
 
 ## Project Description
 
