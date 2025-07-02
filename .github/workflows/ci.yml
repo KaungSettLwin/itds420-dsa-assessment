@@ -39,7 +39,7 @@ jobs:
         PYTHONPATH: ${{ github.workspace }} # Add project root to PYTHONPATH for module imports
 
     # Optional: Upload coverage report to Codecov/Coveralls
-     - name: Upload coverage to Codecov
+    - name: Upload coverage to Codecov
        uses: codecov/codecov-action@v3
        with:
          token: ${{ secrets.CODECOV_TOKEN }} # Set this in GitHub Secrets
