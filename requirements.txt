@@ -2,3 +2,4 @@ pytest
 pytest-cov
 matplotlib # If you plan to generate plots for benchmarking
 seaborn    # If you plan to generate plots for benchmarking
+pandas
